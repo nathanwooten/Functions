@@ -52,13 +52,13 @@ class Functions
 	public function delimiters( array $delimiters = [], $regex = true )
 	{
 
-		$delimiters = empty( $delimiters ) ? $this->delimiters : $delimiters;
+		$delimiters = empty( $delimiters ) ? static::$delimiters : $delimiters;
 
 		$delimiters = array_values( $delimiters );
 
-		if ( ! $regex ) {
-			$delimiters[0] = '\\' . implode( '\\', str_split( $delimiters[0] ) );
-			$delimiters[1] = '\\' . implode( '\\', str_split( $delimiters[1] ) );
+		if ( $regex ) {
+			$delimiters[0] = $this->escape( $delimiters[0] );
+			$delimiters[1] = $this->escape( $delimiters[1] );
 		}
 
 		return $delimiters;
