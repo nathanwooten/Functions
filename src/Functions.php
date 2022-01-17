@@ -26,7 +26,7 @@ class Functions
 	public function escape( $escape )
 	{
 
-		return '\\' . implode( '\\', str_split( $escape ) );
+		return preg_quote( $escape );
 
 	}
 
