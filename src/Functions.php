@@ -44,7 +44,7 @@ class Functions
 	public function strip( $delimited, $regex = false )
 	{
 
-		$name = str_replace( $this->delimiters( $this->delimiters, $regex ), '', $delimited );
+		$name = str_replace( $this->delimiters( static::$delimiters, $regex ), '', $delimited );
 		return $name;
 
 	}
