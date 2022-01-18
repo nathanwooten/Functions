@@ -73,7 +73,6 @@ class Functions
 		while ( ! file_exists( $target ) )
 		{
 
-			$dir = isset( $dir ) ? $dir : $from;
 			$newdir = dirname( $dir );
 
 			if ( ! isset( $dir ) ) {
